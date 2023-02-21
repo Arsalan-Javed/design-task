@@ -1,0 +1,87 @@
+<div class="home-container">
+
+    <div [@headerHide]="headerState">
+        <div class="sticky-header">
+            <div class="info" [@showFromTopBottom] >
+                <div class="lbl-balance">your balance</div>
+                <div class="balance">$1224.56</div>
+            </div>
+            <div class="action">
+                    <div class="plus-sign" [@showFromTopLeft]></div>
+            </div>
+        </div>
+        
+        <div class="categories-wrapper">
+            <div class="categories slide-left categories-first-row flex">
+    
+                <div routerLink="/detail" class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/polygon.png" >
+                    </div>
+                    <div class="txt">polygon</div>
+                </div>
+        
+                <div routerLink="/detail"  class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/ethereum.png" >
+                    </div>
+                    <div class="txt">ethereum</div>
+                </div>
+                <div routerLink="/detail"  class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/chainlink.png" >
+                    </div>
+                    <div class="txt">chainlink</div>
+                </div>
+            </div>
+            <div class="categories slide-right categories-secound-row">
+                <div routerLink="/detail"  class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/cosmos.png" >
+                    </div>
+                    <div class="txt">cosmos</div>
+                </div>
+                <div routerLink="/detail"  class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/uniswap.png" >
+                    </div>
+                    <div class="txt">uniswap</div>
+                </div>
+                <div routerLink="/detail"  class="btn-cat">
+                    <div class="icon">
+                        <img src="../../assets/litecoin.png" >
+                    </div>
+                    <div class="txt">litecoin</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="crypto-list">
+            <div class="crypto-card animate__animated animate__slideInUp" *ngFor="let item of items;" >
+    
+                <div [@detailView]="item.detailState">
+                    <div class="crypto-img" [@pressEffect]="item.state" [@imageScale]="item.imageState" (click)="openStats(item)">
+                        <img src="https://via.placeholder.com/600.png/09f/fff">
+                    </div>
+                    <div class="crypto-footer" [@detailFooterView]="item.detailFooterState">
+                           <div class="price">
+                                <img src="../../assets/ethereum-white.png">
+                                <span>{{ item.count }}</span>
+                           </div> 
+                           <div class="timer">
+                            {{ item.time }}
+                           </div>
+                    </div>
+                </div>
+               
+            </div>
+    
+        </div>
+
+    
+    </div>
+
+</div>
+
+
+  

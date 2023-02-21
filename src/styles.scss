@@ -1,0 +1,228 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+$base-color: #0E0E18;
+$default-color: #8c8d96;
+$bar-color: #2e2f38;
+$btn-primary-color: #5957BB;
+$btn-secondary-color: #BAE399;
+
+body{
+    background-color: $base-color;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.sticky-header {
+    display: flex;
+    position: sticky;
+    z-index: 10;
+    padding: 20px 10px; 
+    top: 0px;
+    background-color: $base-color;
+}
+
+.balance{
+    color: white;
+    padding-top: 4px;
+    font-size: 42px;
+}
+.categories-wrapper {
+    overflow: hidden;
+}
+.home-container{
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        background-color: $base-color;
+        padding: 10px;
+    }
+
+    .info{
+        flex: 1 1;
+        .lbl-balance{
+            color: $default-color;
+            font-size: 28px;
+        }
+        
+    }
+
+    .action{
+     
+        .plus-sign {
+            border: 1px solid white;
+            width: 72px;
+            height: 72px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+          }
+          
+          .plus-sign:before, .plus-sign:after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background-color: black;
+            top: calc(50% - 1px);
+            left: calc(50% - 13px);
+          }
+          
+          .plus-sign:after {
+            transform: rotate(90deg);
+          }
+    }
+    
+    .categories{
+        display: flex;
+        margin-bottom: 10px;
+        position: relative;
+    
+  
+
+        .btn-cat{
+            
+            background-color: $bar-color;
+            height: 50px;
+            border-radius: 15px;
+            padding: 5px 20px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 200px;
+            margin-right: 10px;
+            &:active {
+                background: $btn-secondary-color;
+            }
+
+            .icon{
+                background: #fff;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+
+                img{
+                    width: 25px;
+                    height: 25px;
+                    margin: auto 0px;
+                    left: 10%;
+                    position: relative;
+                    top: 12%;
+                }
+            }
+
+            .txt{
+                font-size: 28px;
+                margin-left: 10px;
+            }
+
+        }
+
+    }
+}
+.categories-first-row {
+    position: absolute;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: slideLeft 15s linear infinite;
+    -webkit-animation: slideLeft 15s linear infinite;
+    animation: slideLeft 15s linear infinite;
+}
+.categories-secound-row {
+
+    position: absolute;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: slideRight 15s linear infinite;
+    -webkit-animation: slideRight 15s linear infinite;
+    animation: slideRight 15s linear infinite;
+}
+// .animate__animated.animate__backInDown {
+//     --animate-duration: 1s;
+//     --animate-delay: 0.9s;
+// }
+
+  
+.crypto-card {
+    margin-bottom: 10px;
+    text-align: center;
+    .crypto-img {
+        margin-bottom: 1px;
+        img {
+            max-width: 100%;
+            border-radius: 40px;
+        }
+    }
+    .crypto-footer {
+        background-color: $bar-color;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        color: #fff;
+        padding: 25px;
+        .price {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            img {
+                width: 30px;
+            }
+        }
+        .timer {
+            margin-left: auto;
+        }
+    }
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes slideLeft {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+   }
+   @-webkit-keyframes slideLeft {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+   }
+   @keyframes slideLeft {
+    0%   { 
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%); 		
+    }
+    100% { 
+    -moz-transform: translateX(-100%); /* Firefox bug fix */
+    -webkit-transform: translateX(-100%); /* Firefox bug fix */
+    transform: translateX(-100%); 
+    }
+   }
+
+   /* Move it (define the animation) */
+@-moz-keyframes slideRight {
+    0%   { -moz-transform: translateX(-100%); }
+    100% { -moz-transform: translateX(100%); }
+   }
+   @-webkit-keyframes slideRight {
+    0%   { -webkit-transform: translateX(-100%); }
+    100% { -webkit-transform: translateX(100%); }
+   }
+   @keyframes slideRight {
+    0%   { 
+    -moz-transform: translateX(-100%); /* Firefox bug fix */
+    -webkit-transform: translateX(-100%); /* Firefox bug fix */
+    transform: translateX(-100%); 		
+    }
+    100% { 
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%); 
+    }
+   }
